@@ -2,9 +2,25 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #b5259613;
+    color: #000000;
     scroll-behavior: smooth;
+}
+
+/* Hero */
+.hero > h1 {
+    color: #000000b9;
+    text-shadow: white 4px 2px 4px;
+}
+
+.hero > p {
+    color: rgb(54, 52, 52);
+    text-shadow: white 4px 2px 4px;
+}
+
+.hero > p:hover {
+    text-shadow: rgba(3, 3, 3, 0.212) 4px 2px 4px;
+    color: rgba(0, 38, 255, 0.699);
 }
 
 /* Encabezado */
@@ -12,20 +28,26 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #333;
+    background: linear-gradient(to right, #3636ba57, #f98b8b80);
     color: white;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(174, 59, 59, 0.477);
 }
 
 header .logo a {
     text-decoration: none;
-    color: white;
+    text-shadow: rgba(80, 68, 248, 0.484) 4px 2px 4px;
+    color: rgb(255, 255, 255);
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+#logo-store:hover {
+    text-shadow: rgba(87, 96, 196, 0.292) 4px 2px 4px;
+    color: rgba(206, 8, 8, 0.55);
 }
 
 header nav ul {
@@ -43,27 +65,32 @@ header nav ul li a {
     transition: color 0.3s;
 }
 
+header .logo a:hover {
+    color: #000000e6;
+}
+
 header nav ul li a:hover {
-    color: #f0a500;
+    color: #000000e6;
+    text-shadow: rgba(80, 68, 248, 0.484) 4px 2px 4px;
 }
 
 /* Hero */
 .hero {
     text-align: center;
     padding: 50px 20px;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
     color: white;
 }
 
 /* Acerca de mí */
 #about {
     padding: 50px 20px;
-    background: #f9f9f9;
+    background: #452c4700;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.304);
 }
 
+/* Efecto Poképarada para la imagen */
 .profile-pic {
     width: 150px;
     height: 150px;
@@ -71,8 +98,20 @@ header nav ul li a:hover {
     margin: 20px auto;
     display: block;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Suavidad en el giro y la sombra */
 }
 
+.profile-pic:hover {
+    transform: rotate(360deg) scale(1.2); /* Rotación completa y escalado */
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.7); /* Sombra rosada intensa */
+}
+
+.profile-pic:active {
+    transform: scale(1); /* Retorna al tamaño original al hacer clic */
+    box-shadow: 0 4px 10px rgba(36, 36, 186, 0.5); /* Azul tenue */
+}
+
+/* Skills */
 .skills {
     display: flex;
     justify-content: center;
@@ -142,7 +181,7 @@ header nav ul li a:hover {
 /* Contacto */
 #contact {
     padding: 50px 20px;
-    background: #f9f9f9;
+    background: #452c4700;
     text-align: center;
 }
 
@@ -174,6 +213,6 @@ button[type="submit"]:hover {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #333;
+    background: linear-gradient(to right, #3636ba57, #f98b8b80);
     color: white;
 }
