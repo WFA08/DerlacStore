@@ -1,22 +1,23 @@
 name: Deploy to Server
 
-# Cuándo ejecutarse
 on:
   push:
     branches:
-      - main  # Se ejecutará al hacer push en la rama main
+      - main  # Ejecuta la acción cuando se haga push a la rama "main"
 
-# Configuración del trabajo
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # Entorno donde se ejecutará el workflow
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2  # Descarga el repositorio en el entorno de GitHub Actions
+      uses: actions/checkout@v2  # Clona el repositorio para usarlo en las acciones
 
-    - name: Deploy to server via SSH
+    - name: Set up SSH
       run: |
-        ssh -o StrictHostKeyChecking=no derlzqbj@server315 "
-        cd /home/derlzqbj/public_html &&
-        git pull origin main"
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H server315 >> ~/.ssh/known_hosts
+
+    - name: Pull latest changes on server
+      run: ssh derlzqbj@server315 "cd /home/derlzqbj/public_html && git pull origin main"
