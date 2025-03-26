@@ -1,0 +1,22 @@
+name: Deploy to Server
+
+# Cuándo ejecutarse
+on:
+  push:
+    branches:
+      - main  # Se ejecutará al hacer push en la rama main
+
+# Configuración del trabajo
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Entorno donde se ejecutará el workflow
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # Descarga el repositorio en el entorno de GitHub Actions
+
+    - name: Deploy to server via SSH
+      run: |
+        ssh -o StrictHostKeyChecking=no derlzqbj@server315 "
+        cd /home/derlzqbj/public_html &&
+        git pull origin main"
