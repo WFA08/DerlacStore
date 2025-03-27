@@ -3,7 +3,7 @@ name: Deploy to Server
 on:
   push:
     branches:
-      - main  # Ejecuta la acción cuando se haga push a la rama "main"
+      - main
 
 jobs:
   deploy:
@@ -11,13 +11,13 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2  # Clona el repositorio para usarlo en las acciones
+      uses: actions/checkout@v2
 
     - name: Set up SSH
       run: |
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -H server315 >> ~/.ssh/known_hosts
+        ssh-keyscan -H ftp.tusitio.com >> ~/.ssh/known_hosts
 
     - name: Pull latest changes on server
-      run: ssh derlzqbj@server315 "cd /home/derlzqbj/public_html && git pull origin main"
+      run: ssh derlzqbj@ftp.tusitio.com "cd /home/derlzqbj/public_html && git pull origin main"
