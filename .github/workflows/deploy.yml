@@ -13,12 +13,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up SSH
+        - name: Set up SSH
       run: |
-        mkdir -p $HOME/.ssh  # Crear el directorio SSH
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > $HOME/.ssh/id_rsa
-        chmod 600 $HOME/.ssh/id_rsa
-        ssh-keyscan -H ftp.derlacstore.com >> $HOME/.ssh/known_hosts
+        echo "Verifying paths and creating directory"
+        mkdir -p ~/.ssh || echo "Directory already exists"
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ftp.derlacstore.com >> ~/.ssh/known_hosts
+
 
     - name: Pull latest changes on server
       run: ssh derlzqbj@ftp.derlacstore.com "cd /home/derlzqbj/public_html && git pull origin main"
