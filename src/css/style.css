@@ -7,6 +7,24 @@ body {
     scroll-behavior: smooth;
 }
 
+.hero > h1{
+    color: #000000b9;
+    text-shadow: white 4px 2px 4px;
+}
+
+.hero > p{
+    color: rgb(54, 52, 52);
+    text-shadow: white 4px 2px 4px;
+}
+/* Estilo general */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #b5259613;
+    color: #000000;
+    scroll-behavior: smooth;
+}
+
 /* Hero */
 .hero > h1 {
     color: #000000b9;
@@ -112,6 +130,192 @@ header nav ul li a:hover {
 }
 
 /* Skills */
+.skills {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skills img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s;
+}
+
+.skills img:hover {
+    transform: scale(1.2);
+}
+
+/* Proyectos */
+.filter-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #555;
+    transform: translateY(-3px);
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.project {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Contacto */
+#contact {
+    padding: 50px 20px;
+    background: #452c4700;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to right, #3636ba57, #f98b8b80);
+    color: white;
+}
+
+.hero > p:hover{
+    text-shadow: rgba(3, 3, 3, 0.212) 4px 2px 4px;
+    color: rgba(0, 38, 255, 0.699);
+}
+
+/* Encabezado */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(to right, #3636ba57, #f98b8b80);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(174, 59, 59, 0.477);
+}
+
+header .logo a {
+    text-decoration: none;
+    text-shadow: rgba(80, 68, 248, 0.484) 4px 2px 4px;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#logo-store:hover{
+    text-shadow: rgba(87, 96, 196, 0.292) 4px 2px 4px;
+    color: rgba(206, 8, 8, 0.55);
+    
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+header .logo a:hover{
+    color: #000000e6;
+}
+header nav ul li  a:hover {
+    color: #000000e6;
+    text-shadow: rgba(80, 68, 248, 0.484) 4px 2px 4px; 
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    color: white;
+}
+
+/* Acerca de mí */
+#about {
+    padding: 50px 20px;
+    background: #452c4700;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.304);
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
 .skills {
     display: flex;
     justify-content: center;
